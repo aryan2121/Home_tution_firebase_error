@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HOME TUTIONS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="Location">
+
+        <item>Choose Loacations</item>
+        <item>Piska more</item>
+        <item>Ratu Road</item>
+        <item>Lalpur</item>
+        <item>Main Road</item>
+        <item>katchury</item>
+    </string-array>
+</resources>

@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
     lateinit var INDOOR: indoor
     lateinit var OUTDOOR: outdoor
+    lateinit var PROFILE: profile
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +46,15 @@ class MainActivity : AppCompatActivity() {
                 }
 
 
+                R.id.profile_nav_id -> {
+                    PROFILE = profile()
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.fram_layout,PROFILE)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                        .commit()
 
+                }
             }
             true
         }

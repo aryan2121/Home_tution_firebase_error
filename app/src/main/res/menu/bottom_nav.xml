@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-    android:id="@+id/lol"
-        android:title=""/>
+<!--    <item-->
+<!--    android:id="@+id/lol"-->
+<!--        android:title=""/>-->
     <item
     android:id="@+id/outdoor_nav_id"
-    android:title="Outdoor"
+    android:title="             Outdoor          "
     android:icon="@drawable/outdoor_icon"/>
 
 
     <item
     android:id="@+id/indoor_nav_id"
-    android:title="Indoor"
+    android:title="          Indoor          "
     android:icon="@drawable/indoor_icon"/>
 
     <item
-    android:id="@+id/loll"
-    android:title="" />
+    android:id="@+id/profile_nav_id"
+    android:title="          Profile              "
+        android:icon="@drawable/profile_icon"/>
 
 </menu>

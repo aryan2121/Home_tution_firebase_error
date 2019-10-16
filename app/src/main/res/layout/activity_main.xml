@@ -10,40 +10,114 @@
         android:id="@+id/btm_nav"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         app:itemBackground="@color/colorPrimaryDark"
         app:menu="@menu/bottom_nav" />
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Teachers"
+            android:textColor="#00bbff"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/location_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:entries="@array/Location" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/fram_layout"
         android:layout_width="match_parent"
-        android:layout_height="606dp"
-        android:layout_above="@id/btm_nav"></FrameLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+        android:layout_height="590dp"
+        android:layout_above="@id/btm_nav"
+        android:layout_below="@+id/linearlayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp" />
 
 
-
-    <TextView
-        android:id="@+id/textView"
+        <LinearLayout
+        android:id="@+id/constnt_profile"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Teachers"
-        android:textColor="#00bbff"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:gravity="center"/>
-    <Spinner
-    android:id="@+id/location_spinner"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="24dp"
-    android:layout_gravity="center"
-    android:entries="@array/Location"
-    />
+        android:layout_height="680dp"
+        android:layout_alignBottom="@+id/fram_layout"
+        android:layout_marginBottom="1dp"
+            android:orientation="vertical">
 
-</LinearLayout>
+           <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+
+                android:id="@+id/user_image_id"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="100dp"/>
+
+            <TextView
+                android:id="@+id/textview_profilename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_horizontal"  />
+            <TextView
+                android:id="@+id/textview_profileEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/signout_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign Out"
+                android:layout_marginTop="150dp"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
 
 </RelativeLayout>

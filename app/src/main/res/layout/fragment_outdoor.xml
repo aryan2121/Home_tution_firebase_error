@@ -6,5 +6,7 @@
     tools:context=".outdoor"
     android:background="#B400FF54">
 
-
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
 </FrameLayout>

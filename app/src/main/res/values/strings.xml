@@ -12,4 +12,58 @@
         <item>Main Road</item>
         <item>katchury</item>
     </string-array>
+
+
+    <string-array name="classes">
+
+        <item>classes upto you can taught</item>
+        <item>prep to std 4</item>
+
+        <item>std 5 to std 8</item>
+        <item>std 9 and std 10</item>
+        <item>std 11 to std 12</item>
+
+
+    </string-array>
+
+
+    <string-array name="place">
+        <item>I can go to students place</item>
+        <item>Students can come to my place</item>
+    </string-array>
+
+
+    <string-array name="specialization_for_ten">
+        <item>Choose any one subject</item>
+        <item>All</item>
+        <item>PHY</item>
+        <item>Che</item>
+        <item>Maths</item>
+        <item>Bio</item>
+        <item>English</item>
+    </string-array>
+//for tutor form only
+    <string-array name="Your_specialized_Subject">
+        <item>Your specialized Subject</item>
+        <item>All</item>
+        <item>PHY</item>
+        <item>Che</item>
+        <item>Maths</item>
+        <item>Bio</item>
+        <item>English</item>
+        <item>PCM</item>
+        <item>PCB</item>
+        <item>Accounts</item>
+
+    </string-array>
+    //for tutor form only end
+    <string-array name="specialization_for_tweleve">
+        <item>Choose any one subject</item>
+        <item>PCM</item>
+        <item>Phy</item>
+        <item>Che</item>
+        <item>Maths</item>
+        <item>PCB</item>
+        <item>Accounts</item>
+    </string-array>
 </resources>

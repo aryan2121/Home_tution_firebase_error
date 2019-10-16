@@ -1,5 +1,6 @@
 package com.amanaryan.hometutions
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 
 import android.content.Intent
@@ -11,6 +12,7 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.IntegerRes
+import androidx.core.content.getSystemService
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -27,6 +29,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlin.system.exitProcess
 
 class login : AppCompatActivity() {
 
@@ -40,18 +43,16 @@ class login : AppCompatActivity() {
     private var mAuth: FirebaseAuth? = null
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        progress_barId.visibility=View.GONE
+        //progress bar
 
-//
-//        signIn = findViewById<View>(R.id.sign_inforStudents_button) as SignInButton
-//        signIn = findViewById<View>(R.id.sign_in_forTechars_button) as SignInButton
+        var profilesignout = intent.getStringExtra("signoutcheck")
 
 
-        signOut = findViewById<View>(R.id.sign_out) as Button
 
         mAuth = FirebaseAuth.getInstance()
 
@@ -70,16 +71,62 @@ class login : AppCompatActivity() {
         // Build a GoogleSignInClient with the options specified by gso.
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        var m = 0
+        if (profilesignout == "yes") {
+            mAuth!!.signOut()
+            m = 2
+            startActivity(Intent(this, splashActivity::class.java))
 
 
-        sign_inforStudents_button.setOnClickListener { signIn() }
 
 
-        signOut!!.setOnClickListener {
-            mAuth!!.signOut() //get signed out
-
-            signOut!!.visibility = View.GONE
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //check user login
+
+
+
+
+
+
+
+
+
+
+
+        sign_inforStudents_button.setOnClickListener{
+            sign_inforStudents_button.visibility=View.GONE
+            progress_barId.visibility=View.VISIBLE
+            signIn() }
+
+
+
 
     }
 
@@ -96,6 +143,9 @@ class login : AppCompatActivity() {
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         super.onActivityResult(requestCode, resultCode, data)
+
+
+
 
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -125,6 +175,7 @@ class login : AppCompatActivity() {
         }
 
     }
+
 
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
@@ -173,61 +224,70 @@ class login : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
 
 
-        // signOut.setVisibility(View.VISIBLE);
+
 
 
         val acct = GoogleSignIn.getLastSignedInAccount(applicationContext)
-
+        var user_name:String=""
+        var user_email:String=""
+        var user_photoUrl:String=""
         if (acct != null) {
 
             val personName = acct.displayName.toString()
-
+                user_name=personName
             val personGivenName = acct.givenName.toString()
 
             val personFamilyName = acct.familyName.toString()
 
             val personEmail = acct.email.toString()
 
+                user_email=personEmail
             val personId = acct.id.toString()
 
             val personPhoto = acct.photoUrl.toString()
-
+                user_photoUrl=personPhoto
 
 
             Toast.makeText(
                 this,
                 "Name of the user :$personName",
-                Toast.LENGTH_SHORT
+                LENGTH_SHORT
             ).show()
 
 
+            val ref = FirebaseDatabase.getInstance().getReference("Main/User/login ")
 
 
+            val value = SaveData(
+                personName,
+                personEmail,
+                personId,
+                personGivenName,
+                personFamilyName,
+                personPhoto
+            )
 
-    val ref = FirebaseDatabase.getInstance().getReference("User/Students ")
+            ref.child("personEmail").setValue(value).addOnSuccessListener {
 
-
-
-
-
-    val value = SaveData(personName,personEmail,personId,personGivenName,personFamilyName,personPhoto)
-
-    ref.child("personName/personEmail").setValue(value).addOnSuccessListener {
-
-        //getData()
-
-
-        Toast.makeText(this, "saved success", LENGTH_SHORT).show()
-        Toast.makeText(this, "SAB HO GYA H  HEHEHE", LENGTH_SHORT).show()
-    }
+                //getData()
 
 
-
+                Toast.makeText(this, "saved success", LENGTH_SHORT).show()
+                Toast.makeText(this, "SAB HO GYA H  HEHEHE", LENGTH_SHORT).show()
+            }
 
 
         }
 
-        startActivity(Intent(this,studentForm::class.java))
+        var i = intent
+
+        i = Intent(this,Choose::class.java)
+
+        i.putExtra("user_name",user_name)
+        i.putExtra("user_email",user_email)
+        i.putExtra("user_photoUrl",user_photoUrl)
+
+        startActivity(i)
     }
 
     companion object {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "683522821114",
+    "firebase_url": "https://home-tutions.firebaseio.com",
+    "project_id": "home-tutions",
+    "storage_bucket": "home-tutions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683522821114:android:f4f5cd32ef0f92fd703243",
+        "android_client_info": {
+          "package_name": "com.amanaryan.hometutions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683522821114-kjml8701cuku0tl1u0009duq0n5p5vr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amanaryan.hometutions",
+            "certificate_hash": "2631a73b21092ffec14f7ea1d1484eb6d5d60df2"
+          }
+        },
+        {
+          "client_id": "683522821114-8es009r8n3m73v95ml5p9tgmp9dobntl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF87ulv7kAzVmL1IpnJenIqvsI99Pzmw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683522821114-8es009r8n3m73v95ml5p9tgmp9dobntl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

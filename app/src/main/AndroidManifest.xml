@@ -16,7 +16,6 @@
         <activity android:name=".Class" />
         <activity android:name=".studentForm" />
         <activity android:name=".tutorForm" />
-        <activity android:name=".logintutor" />
         <activity android:name=".Choose" />
         <activity android:name=".login">
 

@@ -267,8 +267,8 @@ class login : AppCompatActivity() {
                 personPhoto
             )
 
-            ref.child("personEmail").setValue(value).addOnSuccessListener {
-
+            ref.child(personName).setValue(value).addOnSuccessListener {
+Log.d("lele","please")
                 //getData()
 
 

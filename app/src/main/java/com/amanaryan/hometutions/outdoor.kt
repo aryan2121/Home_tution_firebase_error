@@ -75,3 +75,120 @@ class outdoor : Fragment() {
 //        })
 //    }
 }
+
+
+
+
+
+
+
+
+//simple recieve
+//
+//val adapter = GroupAdapter<ViewHolder>()
+//
+//recyclerView_home.adapter = adapter
+//
+//
+//getData()
+//
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//fun getData(){
+//
+//    val ref = FirebaseDatabase.getInstance().getReference("Marwari/bca")
+//
+//    ref.addValueEventListener(object : ValueEventListener{
+//
+//        override fun onCancelled(p0: DatabaseError) {
+//
+//            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//
+//        }
+//
+//
+//
+//        override fun onDataChange(p0: DataSnapshot) {
+//
+//            val adapter = GroupAdapter<ViewHolder>()
+//
+//            p0.children.forEach {
+//
+//                val marwari = it.getValue(SaveData::class.java)
+//
+//                Log.d("Save",it.toString())
+//
+//                if (marwari != null)
+//
+//
+//
+//                    adapter.add(Order(marwari))
+//
+//                Log.d("Save","yhin to hai hi")
+//
+//
+//
+//            }
+//
+//            recyclerView_home.adapter = adapter
+//
+//        }
+//
+//
+//
+//    })
+//
+//}
+//
+//
+//
+//
+//
+//
+//}
+//
+//
+//
+//
+//
+//class Order(val data : SaveData): Item<ViewHolder>(){
+//
+//    override fun getLayout(): Int {
+//
+//        return R.layout.viewholder
+//
+//    }
+//
+//
+//
+//    override fun bind(viewHolder: ViewHolder, position: Int) {
+//
+//        Log.d("Save","yhaan tk pouncha")
+//
+//        viewHolder.itemView.textView_name.text = data.name
+//
+//
+//
+//        Picasso.get().load(data.link).into(viewHolder.itemView.imageView2)
+//
+//    }
+//
+//
+//
+//}
+
+
+

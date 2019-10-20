@@ -19,11 +19,21 @@
 <!--    -->
 <!--    location bnana h -->
 <!--    -->
-<!--    or pic v -->
+
 <!--    -->
 <!--    -->
 <!--    -->
 <!--    -->
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/tutorformProgressbar"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
+
 
     <TextView
         android:id="@+id/textView7"
@@ -42,6 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,148 +62,147 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-           android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <Button
+                android:id="@+id/tutor_img"
                 android:layout_width="80dp"
                 android:layout_height="70dp"
-                android:id="@+id/tutor_img"
-                android:background="@drawable/ic_photo_camera_black_24dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                />
+                android:background="@drawable/ic_photo_camera_black_24dp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tap to upload your pic"
                 android:layout_marginBottom="15dp"
-                android:gravity="center_horizontal"/>
+                android:gravity="center_horizontal"
+                android:text="Tap to upload your pic" />
 
             <EditText
+                android:id="@+id/Tutor_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Full Name"
-                android:id="@+id/Tutor_name"
-                android:padding="15dp"/>
+                android:padding="15dp" />
 
             <EditText
+                android:id="@+id/Tutor_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-                android:id="@+id/Tutor_email"
                 android:inputType="textEmailAddress"
-                android:padding="15dp"
-                />
+                android:padding="15dp" />
 
             <EditText
+                android:id="@+id/Tutor_qualification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Qualification"
-                android:id="@+id/Tutor_qualification"
-                android:padding="15dp"/>
+                android:padding="15dp" />
+
             <EditText
+                android:id="@+id/Tutor_aadhar_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Aadhar no."
                 android:inputType="number"
-                android:id="@+id/Tutor_aadhar_no"
-                android:padding="15dp"/>
+                android:padding="15dp" />
+
             <EditText
+                android:id="@+id/Tutor_mobileno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Personal mobile number"
-                android:id="@+id/Tutor_mobileno"
-                android:inputType="phone"/>
+                android:inputType="phone" />
 
 
-<Spinner
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="9dp"
-    android:entries="@array/classes"
-    android:layout_marginTop="5dp"
-    android:id="@+id/classes"/>
+            <Spinner
+                android:id="@+id/classes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="9dp" />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="subjects you can taught"
                 android:id="@+id/Tutor_subjects"
-                android:layout_margin="5dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="subjects you can taught" />
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Your sepcialized subject as a Teacher which you taught to students"
                 android:id="@+id/textviewSpecializationid"
-                android:layout_margin="5dp"/>
-            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/Your_specialized_Subject"
-                android:id="@+id/Tutor_specialization_subject"/>
-             <EditText
+                android:layout_margin="5dp"
+                android:text="Your sepcialized subject as a Teacher which you taught to students" />
+
+            <Spinner
+                android:id="@+id/Tutor_specialization_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/Tutor_minimumfee"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Minimum fee you expect"
-                android:padding="15dp"
-                android:id="@+id/Tutor_minimumfee"/>
+                android:padding="15dp" />
+
             <EditText
+                android:id="@+id/Tutor_present_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="present_Address"
-                android:id="@+id/Tutor_present_address"
-                android:inputType="textMultiLine"/>
+                android:inputType="textMultiLine" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="You can go to students place or student will come to your place"
 
-     android:textSize="20dp"/>
-        <Spinner
-            android:id="@+id/Tutor_place_tution"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/place"/>
+                android:textSize="20dp" />
+
             <Spinner
+                android:id="@+id/Tutor_place_tution"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
                 android:id="@+id/location_tutorform"
-                android:entries="@array/Location"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <EditText
+                android:id="@+id/Tutor_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Any description about you to attract students "
-                android:inputType="textMultiLine"
-                android:id="@+id/Tutor_description"/>
+                android:inputType="textMultiLine" />
+
             <EditText
+                android:id="@+id/Tutor_experience"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Experience in teaching"
-                android:id="@+id/Tutor_experience"/>
-<!--            android:id="@+id/Tutor_submitForm"-->
+                android:hint="Your Experience in teaching" />
+            <!--            android:id="@+id/Tutor_submitForm"-->
             <Button
                 android:id="@+id/Tutor_submitForm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Submit"
-                android:background="#00bbff"
-                android:textColor="#ffffff"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"/>
-            <Button
-            android:id="@+id/xxxxxxxxxx"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="only data with cross img"
-            android:background="#00bbff"
-            android:textColor="#ffffff"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"
+                android:background="#00bbff"
+                android:text="Submit"
+                android:textColor="#ffffff" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:text="hloooooo"
-                android:textColor="#ffffff"/>
+                android:textColor="#ffffff" />
 
 
         </LinearLayout>

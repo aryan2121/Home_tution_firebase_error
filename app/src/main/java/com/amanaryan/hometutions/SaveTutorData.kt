@@ -11,6 +11,7 @@ class SaveTutorData (
                      val subjects:String,
                      val specialization_subject:String,
                      val fee:String,
+                     val location:String,
                      val present_address:String,
                      val place_tution:String,
                      val description:String,
@@ -19,7 +20,7 @@ class SaveTutorData (
 {
 
     constructor() : this("", "","","","","","","","","","",
-        "","","")
+        "","","","")
 
 
 

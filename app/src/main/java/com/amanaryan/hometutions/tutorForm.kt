@@ -6,6 +6,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
@@ -18,10 +20,89 @@ class tutorForm : AppCompatActivity() {
 
     var tutorphotouri: Uri?=null
      var tutorpic:String=""
+//spinner
 
+     var taught_class =""
+    var specialization_subject=""
+    var place_tution=""
+    var location=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutor_form)
+        //Spinners start
+
+         var classs= arrayOf("classes upto you can taught","prep to std 4","std 5 to std 8","std 9 and std 10","std 11 to std 12")
+        val classes=findViewById<Spinner>(R.id.classes)
+        if(classes!=null){ val arrayAdapter= ArrayAdapter(this,android.R.layout.simple_spinner_item,classs)
+        classes.adapter=arrayAdapter
+
+        classes.onItemSelectedListener=object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+              taught_class=classs.toString()
+            }
+        }}
+
+
+
+
+        //Tutor_specialization_subject
+        var speclsubject= arrayOf("Your specialized Subject","All"," PHY"," Che"," Maths", "Bio"," English"," PCM"," PCB","Accounts")
+        val Tutor_specialization_subject=findViewById<Spinner>(R.id.Tutor_specialization_subject)
+        if(Tutor_specialization_subject!=null){
+            val arrayAdapter1= ArrayAdapter(this,android.R.layout.simple_spinner_item,speclsubject)
+            Tutor_specialization_subject.adapter=arrayAdapter1
+
+            Tutor_specialization_subject.onItemSelectedListener=object: AdapterView.OnItemSelectedListener{
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    specialization_subject=speclsubject.toString()
+                }
+            }}
+
+        //Tutor_place_tution
+        var Tutors_place= arrayOf("I can go to students place","Students can come to my place")
+        val Tutor_place_tution=findViewById<Spinner>(R.id.Tutor_place_tution)
+        if(Tutor_place_tution!=null){
+            val arrayAdapter2= ArrayAdapter(this,android.R.layout.simple_spinner_item,Tutors_place)
+            Tutor_place_tution.adapter=arrayAdapter2
+
+            Tutor_place_tution.onItemSelectedListener=object: AdapterView.OnItemSelectedListener{
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    place_tution=Tutors_place.toString()
+                }
+            }}
+
+
+
+        //location_tutorform
+        var tutorkalocation= arrayOf("Choose Loacations","Piska more","Ratu Road","Lalpur","Main Road","katchury")
+        val location_tutorform=findViewById<Spinner>(R.id.location_tutorform)
+        if(location_tutorform!=null){
+            val arrayAdapter3= ArrayAdapter(this,android.R.layout.simple_spinner_item,tutorkalocation)
+            location_tutorform.adapter=arrayAdapter3
+
+            location_tutorform.onItemSelectedListener=object: AdapterView.OnItemSelectedListener{
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                }
+
+                override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    location=tutorkalocation.toString()
+                }
+            }}
+
+        //spinners End
 
 tutor_img.setOnClickListener {
 
@@ -29,12 +110,12 @@ tutor_img.setOnClickListener {
     intent.type="image/*"
     startActivityForResult(intent,0)
 }
-Tutor_submitForm.setOnClickListener { uploadImage() }
-
-xxxxxxxxxx.setOnClickListener {
-    tutorpic="xxxxxx"
-    uploadData()
+Tutor_submitForm.setOnClickListener {
+    tutorformProgressbar.visibility=View.VISIBLE
+    uploadImage()
 }
+
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -70,7 +151,6 @@ xxxxxxxxxx.setOnClickListener {
     fun uploadData() {
 
 
-val location=location_tutorform.toString()
         val tutor_name = Tutor_name.text.toString()
 
 
@@ -89,18 +169,18 @@ val location=location_tutorform.toString()
 
         val mobile =  Tutor_mobileno.text.toString()
 
-        val taught_class = classes.toString()
+        //      val taught_class = classes.toString()
 
 
 
         val subjects =  Tutor_subjects.text.toString()
 
-        val specialization_subject = Tutor_specialization_subject.toString()
+
         val fee =  Tutor_minimumfee.text.toString()
 
         val present_address =Tutor_present_address.text.toString()
 
-        val place_tution=Tutor_place_tution.toString()
+
 
         val description = Tutor_description.toString()
 
@@ -109,16 +189,18 @@ val location=location_tutorform.toString()
         val ref = FirebaseDatabase.getInstance().getReference("Main/Tutors")
         var place:String="noplace_please review"
 
-if(place_tution=="I can go to students place"){place= "Indoor"}
+        if(place_tution=="I can go to students place"){place= "Indoor"}
         if(place_tution=="Students can come to my place"){place="Outdoor"}
 
+           val tc=taught_class
+        val sc=specialization_subject
+        val loc=location
 
-
-        val value = SaveTutorData(tutor_name,tutorpic,email,qualification,aadhar,mobile,taught_class,subjects,specialization_subject,fee,present_address,place_tution,description, experience)
+        val value = SaveTutorData(tutor_name,tutorpic,email,location,qualification,aadhar,mobile,taught_class,subjects,specialization_subject,fee,present_address,place,description, experience)
 
         //,bannerimage1,bannerimage2,bannerimage3,bannerimage4,bannerimage5,instituteimage6
 
-        ref.child(tutor_name).setValue(value).addOnSuccessListener {
+        ref.child(place).child(tc).child(sc).child(loc).child(tutor_name).setValue(value).addOnSuccessListener {
 
             //getData()
 
@@ -127,7 +209,7 @@ if(place_tution=="I can go to students place"){place= "Indoor"}
 
 
             Toast.makeText(this, " Data Submited",LENGTH_SHORT).show()
-
+            startActivity(Intent(this,tutor_cnfrm_message::class.java))
 
 
 

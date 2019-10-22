@@ -22,9 +22,10 @@ class Class : AppCompatActivity() {
         prep_four_cardview.setOnClickListener {
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
-            i.putExtra("class","prep-four")
+            i.putExtra("class","prep to std4")
+            i.putExtra("subject","all")
 
             i.putExtra("user_name",user_name)
             i.putExtra("user_email",user_email)
@@ -35,10 +36,11 @@ class Class : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
-            i.putExtra("class","five-eight")
+            i.putExtra("class","std5 to std8")
 
+            i.putExtra("subject","all")
             i.putExtra("user_name",user_name)
             i.putExtra("user_email",user_email)
             i.putExtra("user_photoUrl",user_photoUrl)
@@ -52,7 +54,7 @@ class Class : AppCompatActivity() {
             i = Intent(this,Subject::class.java)
 
             i.putExtra("pass","one")
-            i.putExtra("subclass","nine-ten")
+            i.putExtra("subclass","std9 to std10")
 
             i.putExtra("user_name",user_name)
             i.putExtra("user_email",user_email)
@@ -67,7 +69,7 @@ class Class : AppCompatActivity() {
 
             i.putExtra("pass","nope")
 
-            i.putExtra("subclass","eleven-tweleve")
+            i.putExtra("subclass","std11 to std12")
 
 
             i.putExtra("user_name",user_name)

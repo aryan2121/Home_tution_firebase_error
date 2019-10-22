@@ -24,7 +24,6 @@
         <item>std 11 to std 12</item>
 
 
-
     </string-array>
 
 
@@ -43,7 +42,7 @@
         <item>Bio</item>
         <item>English</item>
     </string-array>
-//for tutor form only
+    //for tutor form only
     <string-array name="Your_specialized_Subject">
         <item>Your specialized Subject</item>
         <item>All</item>

@@ -45,7 +45,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","all")
             i.putExtra("class","nine-ten")
@@ -60,7 +60,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","pcm")
             i.putExtra("class","elleven-tweleve")
@@ -78,7 +78,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","physics")
             i.putExtra("class",subclass.toString())
@@ -94,7 +94,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","chemistry")
             i.putExtra("class",subclass.toString())
@@ -110,7 +110,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","maths")
             i.putExtra("class",subclass.toString())
@@ -128,7 +128,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","biology")
             i.putExtra("class",subclass.toString())
@@ -147,7 +147,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","accounts")
             i.putExtra("class","eleven-tweleve")
@@ -163,7 +163,7 @@ class Subject : AppCompatActivity() {
 
             var i = intent
 
-            i = Intent(this,MainActivity::class.java)
+            i = Intent(this,Main2Activity::class.java)
 
             i.putExtra("subject","english")
             i.putExtra("class","nine-ten")

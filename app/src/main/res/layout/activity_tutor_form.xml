@@ -24,15 +24,26 @@
 <!--    -->
 <!--    -->
 <!--    -->
-    <androidx.core.widget.ContentLoadingProgressBar
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/tutorformProgressbar"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView7" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#A1A1A5">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView
@@ -63,7 +74,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/linearlayout">
 
             <Button
                 android:id="@+id/tutor_img"
@@ -118,31 +130,310 @@
                 android:inputType="phone" />
 
 
-            <Spinner
-                android:id="@+id/classes"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:padding="9dp" />
+                android:layout_marginTop="3dp"
+                android:text="Classes upto, you can taught" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="155dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <Button
+                    android:id="@+id/prep"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="#D8D5D5"
+                    android:text="Prep to std 4 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/Greenprep"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:text="Prep to std 4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/std5"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="std 5 to std 8 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/Greenstd5"
+                    app:layout_constraintTop_toBottomOf="@+id/prep" />
+
+                <Button
+                    android:id="@+id/Greenstd5"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="std 5 to std 8 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/prep" />
+
+                <Button
+                    android:id="@+id/std9"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="std 9 and std 10 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/std5" />
+
+                <Button
+                    android:id="@+id/Greenstd9"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="std 9 and std 10 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/std5" />
+
+
+                <Button
+                    android:id="@+id/std11"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="std 11 and std 12 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/std9" />
+
+                <Button
+                    android:id="@+id/Greenstd11"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="std 11 and std 12 "
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/std9" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <EditText
                 android:id="@+id/Tutor_subjects"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="3dp"
                 android:hint="subjects you can taught" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/subjectsall">
+
+                <Button
+                    android:id="@+id/bio"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="#D8D5D5"
+                    android:text="Biology"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/Greenbio"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:text="Biology"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/chem"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="Chemistry"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+                <Button
+                    android:id="@+id/Greenchem"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="Chemistry"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bio" />
+
+                <Button
+                    android:id="@+id/Physics"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="Physics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chem" />
+
+                <Button
+                    android:id="@+id/GreenPhysics"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="Physics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chem" />
+
+
+                <Button
+                    android:id="@+id/Acc"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="Accounts"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Physics" />
+
+                <Button
+                    android:id="@+id/GreenAcc"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="Accounts"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Physics" />
+
+                <Button
+                    android:id="@+id/mathss"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="Maths"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Acc" />
+
+                <Button
+                    android:id="@+id/Greenmaths"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="Maths"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Acc" />
+
+
+                <Button
+                    android:id="@+id/eng"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="English"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mathss" />
+
+                <Button
+                    android:id="@+id/Greeneng"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="English"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mathss" />
+
+
+                <Button
+                    android:id="@+id/pcm"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="PCM"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eng" />
+
+                <Button
+                    android:id="@+id/Greenpcm"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="PCM"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eng" />
+
+
+                <Button
+                    android:id="@+id/pcb"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#D8D5D5"
+                    android:text="PCB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pcm" />
+
+                <Button
+                    android:id="@+id/Greenpcb"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="#86FF00"
+                    android:text="PCB"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/pcm" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textviewSpecializationid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Your sepcialized subject as a Teacher which you taught to students" />
-
-            <Spinner
-                android:id="@+id/Tutor_specialization_subject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:text="Your sepcialized subject as a Teacher" />
 
             <EditText
                 android:id="@+id/Tutor_minimumfee"
@@ -165,15 +456,205 @@
 
                 android:textSize="20dp" />
 
-            <Spinner
-                android:id="@+id/Tutor_place_tution"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="116dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp">
 
-            <Spinner
-                android:id="@+id/location_tutorform"
+                <Button
+                    android:id="@+id/iindoor"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="I can go to students place"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/ooutdoor"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="Students will comes to my place"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iindoor" />
+
+                <Button
+                    android:id="@+id/Greenindoor"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+
+                    android:text="I can go to students place"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/Greenoutdooor"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+
+                    android:text="Students will comes to my place"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iindoor" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose your nearest location"
+                android:layout_margin="10dp"
+                android:textSize="20dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/Lalpur"
+                    android:layout_width="265dp"
+                    android:layout_margin="6dp"
+                    android:layout_height="wrap_content"
+                    android:text="Lalpur"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/GreenLalpur"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="Lalpur"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/Harmu"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="Harmu"
+                    android:layout_margin="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Lalpur" />
+
+
+                <Button
+                    android:id="@+id/GreenHarmu"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="Harmu"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Lalpur" />
+                <Button
+                    android:id="@+id/RatuRoad"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="RatuRoad"
+                    android:layout_margin="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Harmu" />
+
+
+                <Button
+                    android:id="@+id/GreenRatuRoad"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="RatuRoad"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Harmu" />
+
+
+                <Button
+                    android:id="@+id/Doranda"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="Doranda"
+                    android:layout_margin="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/RatuRoad" />
+
+
+                <Button
+                    android:id="@+id/GreenDoranda"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="Doranda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/RatuRoad" />
+
+
+                <Button
+                    android:id="@+id/Kantatoli"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="Kantatoli"
+                    android:layout_margin="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Doranda" />
+
+
+                <Button
+                    android:id="@+id/GreenKantatoli"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="Kantatoli"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Doranda" />
+
+
+                <Button
+                    android:id="@+id/Dhurwa"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:text="Dhurwa"
+                    android:layout_margin="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Kantatoli" />
+
+
+                <Button
+                    android:id="@+id/GreenDhurwa"
+                    android:layout_width="265dp"
+                    android:layout_height="wrap_content"
+                    android:background="#86FF00"
+                    android:layout_margin="6dp"
+                    android:text="Dhurwa"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Kantatoli" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <EditText
                 android:id="@+id/Tutor_description"
@@ -187,7 +668,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Your Experience in teaching" />
-            <!--            android:id="@+id/Tutor_submitForm"-->
+
             <Button
                 android:id="@+id/Tutor_submitForm"
                 android:layout_width="wrap_content"
